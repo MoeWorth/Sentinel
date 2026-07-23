@@ -1,5 +1,5 @@
 name: Sentinel
 main: com.moeworth.sentinel.bungee.SentinelBungeePlugin
-version: ${version}
+version: 1.0.0-SNAPSHOT
 author: Moeworth Studios
 description: Systeme avance d'analyse de confiance des joueurs.
