@@ -7,3 +7,7 @@ sentinel-project (2).zip
 sentinel-project (3).zip
 sentinel/CLAUDE.md
 sentinel/README.md
+sentinel/sentinel-api/build
+sentinel/sentinel-bungee/build
+sentinel/sentinel-common/build
+sentinel/sentinel-core/build
