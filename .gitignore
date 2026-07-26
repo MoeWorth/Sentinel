@@ -1,6 +1,7 @@
 .idea
 sentinel/build
 sentinel/.gradle
+sentinel/data.json
 sentinel-project (1).zip
 sentinel-project.zip
 sentinel-project (2).zip
@@ -9,5 +10,6 @@ sentinel/CLAUDE.md
 sentinel/README.md
 sentinel/sentinel-api/build
 sentinel/sentinel-bungee/build
+sentinel/sentinel-bukkit/build
 sentinel/sentinel-common/build
 sentinel/sentinel-core/build

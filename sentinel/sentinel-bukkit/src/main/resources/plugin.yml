@@ -1,0 +1,6 @@
+name: Sentinel
+main: com.moeworth.sentinel.bukkit.SentinelBukkitPlugin
+version: ${version}
+api-version: "1.21"
+author: Moeworth Studios
+description: Systeme avance d'analyse de confiance des joueurs.

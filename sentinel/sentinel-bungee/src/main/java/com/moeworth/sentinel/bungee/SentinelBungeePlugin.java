@@ -1,8 +1,10 @@
 package com.moeworth.sentinel.bungee;
 
 import com.moeworth.sentinel.bungee.command.SentinelCommand;
+import com.moeworth.sentinel.bungee.handshake.ProxyHandshakeListener;
 import com.moeworth.sentinel.bungee.listener.PlayerConnectionListener;
 import com.moeworth.sentinel.common.config.SentinelConfig;
+import com.moeworth.sentinel.common.handshake.ProxyHandshakeProtocol;
 import com.moeworth.sentinel.core.SentinelCore;
 import net.md_5.bungee.api.plugin.Plugin;
 
@@ -10,14 +12,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-/**
- * Point d'entree du plugin BungeeCord.
- * <p>
- * Responsabilite unique de cette classe : cablage (chargement de la
- * configuration, instanciation du coeur, enregistrement des listeners et
- * commandes specifiques a Bungee). Toute la logique metier vit dans
- * sentinel-core.
- */
 public final class SentinelBungeePlugin extends Plugin {
 
     private SentinelCore core;
@@ -30,9 +24,6 @@ public final class SentinelBungeePlugin extends Plugin {
 
             SentinelConfig config = loadOrCreateConfig(dataFolder);
 
-            // TODO(implementation-plateforme) : remplacer par de vraies implementations
-            // (service HTTP de detection VPN, fournisseurs de reputation configures)
-            // une fois les integrations externes choisies. Voir sentinel-api.provider.*
             this.core = SentinelCore.bootstrap(
                     config,
                     dataFolder,
@@ -40,7 +31,9 @@ public final class SentinelBungeePlugin extends Plugin {
                     java.util.List.of()
             );
 
+            getProxy().registerChannel(ProxyHandshakeProtocol.CHANNEL);
             getProxy().getPluginManager().registerListener(this, new PlayerConnectionListener(this, core));
+            getProxy().getPluginManager().registerListener(this, new ProxyHandshakeListener());
             getProxy().getPluginManager().registerCommand(this, new SentinelCommand(core));
 
             getLogger().info("Sentinel active avec succes.");

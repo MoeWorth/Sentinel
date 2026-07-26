@@ -29,9 +29,10 @@ tasks.jar {
 }
 
 tasks.shadowJar {
-    archiveBaseName.set("sentinel-bungee")
-    archiveClassifier.set("")
+    // Convention de nommage commune a tous les loaders : sentinel-<version>+<loader>.jar
+    archiveFileName.set("sentinel-${project.version}+bungee.jar")
     mergeServiceFiles()
+    isZip64 = false
 }
 
 tasks.build {
