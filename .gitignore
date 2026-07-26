@@ -11,5 +11,6 @@ sentinel/README.md
 sentinel/sentinel-api/build
 sentinel/sentinel-bungee/build
 sentinel/sentinel-bukkit/build
+sentinel/sentinel-velocity/build
 sentinel/sentinel-common/build
 sentinel/sentinel-core/build
