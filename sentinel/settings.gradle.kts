@@ -9,9 +9,9 @@ include(
     // implementent la meme API Bukkit, donc un seul jar compile suffit.
     // Il est ensuite duplique/renomme en 3 artefacts pour Modrinth (voir
     // sentinel-bukkit/build.gradle.kts).
-    "sentinel-bukkit"
+    "sentinel-bukkit",
+    "sentinel-velocity"
     // Modules futurs, a decommenter quand implementes :
-    // "sentinel-velocity",
     // "sentinel-fabric",
     // "sentinel-forge"
 )

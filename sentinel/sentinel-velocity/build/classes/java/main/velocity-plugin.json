@@ -1,0 +1,1 @@
+{"id":"sentinel","name":"Sentinel","version":"1.0.0-SNAPSHOT","description":"Systeme avance d\u0027analyse de confiance des joueurs.","authors":["Moeworth Studios"],"dependencies":[],"main":"com.moeworth.sentinel.velocity.SentinelVelocityPlugin"}
